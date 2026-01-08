@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="KeypointJS is a layered authentication and authorization framework for Node.js">
+       
+    <meta name="keywords" content="KeypointJS, Framework For NodeJS, NodeJS, keypointjs, KeypointJS Framework">
+
+    <meta name="author" content="AnasBex">
+    <title>KeypointJS - Layered Authentication Framework</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- JSON untuk stats -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "KeypointJS",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Node.js",
+        "author": {
+            "@type": "Person",
+            "name": "AnasBex"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+
+                <span class="logo-text">Keypoint<span class="logo-highlight">JS</span></span>
+            </div>
+            
+            <nav class="nav">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a>
+                <a href="#architecture" class="nav-link"><i class="fas fa-layer-group"></i> Architecture</a>
+                <a href="#docs" class="nav-link"><i class="fas fa-book"></i> Documentation</a>
+                <a href="#examples" class="nav-link"><i class="fas fa-code"></i> Examples</a>
+            </nav>
+            
+            <div class="nav-actions">
+               <a href="https://github.com/anasbex-dev/keypointjs" class="github-btn">
+                <i class="fab fa-github"></i> Star <span id="github-stars">Loading...</span>
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+<span class="badge"><i class="fas fa-rocket"></i> v<span id="npm-version">Loading...</span></span>
+<span class="badge badge-success"><i class="fas fa-download"></i> <span id="npm-downloads">200+</span> Downloads</span>
+                </div>
+                
+                <h1 class="hero-title">Layered Authentication for <span class="gradient-text">Modern APIs</span></h1>
+                
+                <p class="hero-description">
+                    KeypointJS is a sophisticated, layered authentication and authorization framework for Node.js 
+                    with built-in security features, plugin architecture, and real-time capabilities.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-layer-group"></i>
+                        <div>
+                            <h3>8-Layer Security</h3>
+                            <p>Multi-layered protection</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h3>Lightweight</h3>
+                            <p>~140KB gzipped</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-plug"></i>
+                        <div>
+                            <h3>Plugin System</h3>
+                            <p>Extensible architecture</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#installation" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Get Started
+                    </a>
+                    <a href="https://github.com/anasbex-dev/keypointjs" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="#docs" class="btn btn-outline">
+                        <i class="fas fa-book"></i> Read Docs
+                    </a>
+                </div>
+                
+                <!-- Install Command -->
+                <div class="install-command">
+                    <div class="install-header">
+                        <span>Install with npm</span>
+                        <button class="copy-btn" onclick="copyToClipboard('npm install keypointjs')">
+                            <i class="far fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre><code class="language-bash">npm install keypointjs</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why <span class="gradient-text">KeypointJS?</span></h2>
+                <p class="section-subtitle">Built for security, designed for developers</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Layered Security</h3>
+                    <p>8-layer middleware system for comprehensive API protection and threat mitigation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Plugin Architecture</h3>
+                    <p>Extensible with custom plugins. Built-in Audit Logger, Rate Limiter, and WebSocket Guard.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>High Performance</h3>
+                    <p>Built-in HTTP server with zero dependencies. No Express or Fastify required.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>WebSocket Support</h3>
+                    <p>Real-time communication with built-in authentication and connection management.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Policy Engine</h3>
+                    <p>Rule-based access control with IP whitelisting, rate limiting, and time-based rules.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Multiple Storage</h3>
+                    <p>Choose between in-memory, file-based, or implement your own storage backend.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="section section-dark" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">8-Layer <span class="gradient-text">Architecture</span></h2>
+                <p class="section-subtitle">How KeypointJS processes every request</p>
+            </div>
+            
+            <div class="architecture">
+                <div class="layer">
+                    <div class="layer-number">0</div>
+                    <div class="layer-content">
+                        <h3>Pre-processing Hooks</h3>
+                        <p>Request preprocessing and validation</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">1</div>
+                    <div class="layer-content">
+                        <h3>Protocol Engine</h3>
+                        <p>HTTP/HTTPS/WebSocket detection & parsing</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">2</div>
+                    <div class="layer-content">
+                        <h3>CORS Middleware</h3>
+                        <p>Cross-origin resource sharing handling</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">3</div>
+                    <div class="layer-content">
+                        <h3>Keypoint Validation</h3>
+                        <p>Authentication and keypoint verification</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">4</div>
+                    <div class="layer-content">
+                        <h3>Policy Check</h3>
+                        <p>Authorization rules evaluation</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">5</div>
+                    <div class="layer-content">
+                        <h3>Plugin Processing</h3>
+                        <p>Plugin middleware execution</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">6</div>
+                    <div class="layer-content">
+                        <h3>Route Execution</h3>
+                        <p>Business logic processing</p>
+                    </div>
+                </div>
+                
+                <div class="layer">
+                    <div class="layer-number">7</div>
+                    <div class="layer-content">
+                        <h3>Response Processing</h3>
+                        <p>Response formatting and sending</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="section" id="installation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Started in <span class="gradient-text">60 Seconds</span></h2>
+                <p class="section-subtitle">Start securing your API with just a few lines of code</p>
+            </div>
+            
+            <div class="quick-start">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Basic Setup</span>
+                        <button class="copy-btn" onclick="copyToClipboard(document.querySelector('#basicSetup').textContent)">
+                            <i class="far fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre><code id="basicSetup" class="language-javascript">import { KeypointJS } from 'keypointjs';
+
+// Initialize the framework
+const api = new KeypointJS({
+  requireKeypoint: true,
+  strictMode: false,
+  enableCORS: true,
+  maxRequestSize: '5mb'
+});
+
+// Create and store a keypoint
+const keypoint = await api.createKeypoint({
+  keyId: 'test_key',
+  secret: 'test_secret',
+  scopes: ['api:public', 'users:read'],
+  protocols: ['https', 'wss'],
+  allowedOrigins: ['https://example.com'],
+  rateLimit: {
+    requests: 1000,
+    window: 3600 // 1 hour
+  }
+});
+
+// Define protected route
+api.get('/api/data', (ctx) => {
+  return ctx.json({
+    data: 'protected data',
+    keypointId: ctx.getKeypointId(),
+    scopes: ctx.keypoint?.scopes
+  });
+});
+
+// Start server
+api.listen(3000, 'localhost', () => {
+  console.log('KeypointJS server running on port 3000');
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-dark" id="stats">
+        <div class="container">
+            <div class="stats-container">
+                <!-- Ganti angka statis dengan elemen dinamis: -->
+<div class="stat-item">
+    <i class="fas fa-download"></i>
+    <div class="stat-number" id="total-downloads">0</div>
+    <p>Total Downloads</p>
+</div>
+
+<div class="stat-item">
+    <i class="fab fa-github"></i>
+    <div class="stat-number" id="github-stars-count">0</div>
+    <p>GitHub Stars</p>
+</div>
+
+<div class="stat-item">
+    <i class="fas fa-code-branch"></i>
+    <div class="stat-number" id="github-forks">0</div>
+    <p>Forks</p>
+</div>
+
+<div class="stat-item">
+    <i class="fas fa-tag"></i>
+    <div class="stat-number" id="latest-version">v1.0.0</div>
+    <p>Latest Version</p>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="section" id="docs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive <span class="gradient-text">Documentation</span></h2>
+                <p class="section-subtitle">Everything you need to build secure applications</p>
+            </div>
+            
+            <div class="docs-grid">
+                <a href="#docs-api" class="doc-card">
+                    <i class="fas fa-code"></i>
+                    <h3>API Reference</h3>
+                    <p>Complete API documentation with examples</p>
+                </a>
+                
+                <a href="#docs-plugins" class="doc-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Plugins Guide</h3>
+                    <p>Built-in plugins and custom plugin creation</p>
+                </a>
+                
+                <a href="#docs-security" class="doc-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Best Practices</h3>
+                    <p>Production-ready security configurations</p>
+                </a>
+                
+                <a href="#docs-deployment" class="doc-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Deployment Guide</h3>
+                    <p>Docker, Kubernetes, and cloud deployment</p>
+                </a>
+                
+                <a href="#docs-examples" class="doc-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Examples & Tutorials</h3>
+                    <p>Real-world use cases and tutorials</p>
+                </a>
+                
+                <a href="#docs-migration" class="doc-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Migration Guide</h3>
+                    <p>Migrating from other authentication solutions</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section class="section section-dark" id="examples">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Real-World <span class="gradient-text">Examples</span></h2>
+                <p class="section-subtitle">See KeypointJS in action</p>
+            </div>
+            
+            <div class="examples-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="websocket">WebSocket</button>
+                    <button class="tab-btn" data-tab="rate-limiting">Rate Limiting</button>
+                    <button class="tab-btn" data-tab="policy">Policy Rules</button>
+                    <button class="tab-btn" data-tab="custom-plugin">Custom Plugin</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="websocket-tab">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>WebSocket Authentication</span>
+                                <button class="copy-btn" onclick="copyToClipboard(document.querySelector('#websocketCode').textContent)">
+                                    <i class="far fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <pre><code id="websocketCode" class="language-javascript">// Enable WebSocket support
+const wsGuard = api.enableWebSocket({
+  path: '/ws',
+  requireKeypoint: true,
+  pingInterval: 30000,
+  maxConnections: 1000
+});
+
+// Handle new connections
+wsGuard.onConnection((connection) => {
+  console.log('New WebSocket connection:', connection.id);
+});
+
+// Handle messages with authentication
+wsGuard.onMessage('chat', (message, connection) => {
+  if (!connection.scopes?.includes('chat:write')) {
+    return { type: 'error', error: 'Insufficient scope' };
+  }
+  
+  // Broadcast to all connections
+  wsGuard.broadcast({
+    type: 'chat',
+    from: connection.keypointId,
+    message: message.text,
+    timestamp: new Date().toISOString()
+  });
+  
+  return { type: 'ack', success: true };
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Secure Your API?</h2>
+            <p>Join thousands of developers who trust KeypointJS for their authentication needs.</p>
+            <div class="cta-buttons">
+                <a href="#installation" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play-circle"></i> Get Started Now
+                </a>
+                <a href="https://github.com/anasbex-dev/keypointjs" class="btn btn-secondary btn-lg">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                    
+                        <span class="logo-text">Keypoint<span class="logo-highlight">JS</span></span>
+                    </div>
+                    <p>Layered authentication framework for modern APIs.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/anasbex-dev/keypointjs"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-npm"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Documentation</h3>
+                    <a href="#docs">Getting Started</a>
+                    <a href="#docs-api">API Reference</a>
+                    <a href="#docs-plugins">Plugins</a>
+                    <a href="#docs-security">Security Guide</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="https://github.com/anasbex-dev/keypointjs">GitHub</a>
+                    <a href="#">Contributing</a>
+                    <a href="#">Code of Conduct</a>
+                    <a href="#">Support</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#">Blog</a>
+                    <a href="#">Examples</a>
+                    <a href="#">Tutorials</a>
+                    <a href="#">Changelog</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 KeypointJS. Created with <i class="fas fa-heart" style="color: #ef4444;"></i> by AnasBex.</p>
+                <p>Released under the Apache-2.0 License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
