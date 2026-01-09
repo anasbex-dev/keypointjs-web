@@ -202,11 +202,7 @@ async function fetchNPMStats() {
 // Fetch total downloads from npm-stat.com API
 async function fetchTotalDownloads(version) {
     try {
-        // Note: npm-stat.com requires a different approach
-        // For simplicity, we'll use a placeholder or you can implement:
-        // const response = await fetch(`https://api.npmjs.org/downloads/range/last-year/keypointjs`);
-        
-        // For now, let's update with a static value that you can replace
+
         const downloadsElement = document.getElementById('npm-downloads');
         const totalDownloadsElement = document.getElementById('total-downloads');
         
@@ -215,12 +211,9 @@ async function fetchTotalDownloads(version) {
         }
         
         if (totalDownloadsElement) {
-            // This is a placeholder - you'll need to implement actual NPM download stats
-            // You can use: https://api.npmjs.org/downloads/range/last-year/keypointjs
             totalDownloadsElement.textContent = 'Loading...';
         }
         
-        // Uncomment and implement when you have the actual API
         
         const response = await fetch('https://api.npmjs.org/downloads/range/last-year/keypointjs');
         const data = await response.json();
